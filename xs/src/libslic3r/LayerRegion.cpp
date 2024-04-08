@@ -473,10 +473,12 @@ LayerRegion::correct_z_on_path(ExtrusionPath *path)
 {
 
     #include <cmath> 
+    old_point point1 = {0, 0, 0, 0};
     for (Point& point : path->polyline.points) {
         if(point.z == -1.0){
-            dx = (point.x - point1.x);
-            dz = (point.z - point1.z);       
+            
+            double dx = (point.x - point1.x);
+            double dz = (point.z - point1.z);       
                 
             b = std::atan(dz/dx);
                 
