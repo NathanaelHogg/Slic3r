@@ -2,7 +2,6 @@
 #define slic3r_Point_hpp_
 
 #include "libslic3r.h"
-#include "printConfig.hpp"
 #include <math.h>
 #include <sstream>
 #include <string>
