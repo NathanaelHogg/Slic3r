@@ -360,6 +360,12 @@ smallerY(const Point &a, const Point &b)
    return (a.y > b.y);
 }
 
+struct old_point {
+    double x;
+    double y;
+    double z;
+};
+
 void
 LayerRegion::project_nonplanar_path(ExtrusionPath *path)
 {
@@ -465,9 +471,26 @@ LayerRegion::project_nonplanar_path(ExtrusionPath *path)
 void
 LayerRegion::correct_z_on_path(ExtrusionPath *path)
 {
+
+    #include <cmath> 
     for (Point& point : path->polyline.points) {
         if(point.z == -1.0){
-            point.z = scale_(this->layer()->print_z);
+            dx = (point.x - point1.x);
+            dz = (point.z - point1.z);       
+                
+            b = std::atan(dz/dx);
+                
+            nozzle_offset_from_b0_z = four_axis_Z_offset*(1- std::cos(b))
+            nozzle_offset_from_b0_x = four_axis_Z_offset* std::sin(b)
+            
+            point.z = scale_(this->layer()->print_z) + nozzle_offset_from_b0_z;
+            point.x = point.x + nozzle_offset_from_b0_z;
+
+            point.b = b* 180/M_PI;
+                
+            old_point point1 = {point.x, point.y, point.z, point.b};
+            
+            
         }
     }
 }
