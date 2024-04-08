@@ -52,7 +52,7 @@ Point::translate(double x, double y)
 }
 
 void
-Point::translate(double x, double y, double z, double b)
+Point::translate(double x, double y, double z)
 {
     this->translate(x,y);
     this->z += z;
