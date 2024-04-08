@@ -36,7 +36,7 @@ class Point
     coord_t b;
     Point(coord_t _x = 0, coord_t _y = 0, coord_t _z = -1, coord_t _b = 0): x(_x), y(_y), z(_z), b(_b) {};
     Point(int _x, int _y, int _z, int _b): x(_x), y(_y), z(_z), b(_b) {};
-    Point(long long _x, long long _y, long long _z, long long_b): x(_x), y(_y), z(_z), b(_b) {};  // for Clipper
+    Point(long long _x, long long _y, long long _z, long long _b): x(_x), y(_y), z(_z), b(_b) {};  // for Clipper
     Point(double x, double y, double z, double b);
     static Point new_scale(coordf_t x, coordf_t y) {
         return Point(scale_(x), scale_(y));
