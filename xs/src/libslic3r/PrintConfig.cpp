@@ -95,6 +95,28 @@ PrintConfigDef::PrintConfigDef()
     def->default_value = new ConfigOptionFloat(10.0);
 
 
+
+	
+    def = this->add("4_axis", coBool);
+    def->label = "Use 4th Axis";
+    def->category = "Layers and Perimeters";
+    def->tooltip = "Add a 4th Axis rotating nozzle";
+    def->cli = "4_axis!";
+    def->default_value = new ConfigOptionBool(false);
+	
+    def = this->add("4_axis_Z_offset", coFloat);
+    def->label = "Z Axis offset";
+    def->category = "Layers and Perimeters";
+    def->tooltip = "The distance from the center of rotation to the tip of the nozzle";
+    def->sidetext = "mm";
+    def->cli = "4_axis_Z_offset=f";
+    def->min = 0;
+    def->default_value = new ConfigOptionFloat(20.0);
+
+
+
+
+	
     def = this->add("avoid_crossing_perimeters", coBool);
     def->label = "Avoid crossing perimeters";
     def->category = "Layers and Perimeters";
