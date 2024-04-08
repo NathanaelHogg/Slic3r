@@ -164,8 +164,8 @@ class PrintObjectConfig : public virtual StaticPrintConfig
     ConfigOptionFloat               nonplanar_layers_height;
     ConfigOptionFloat               nonplanar_layers_ignore_collision_size;
 
-    ConfigOptionBool                4_axis;
-    ConfigOptionFloat               4_axis_Z_offset;
+    ConfigOptionBool                four_axis;
+    ConfigOptionFloat               four_axis_Z_offset;
 
     ConfigOptionBool                dont_support_bridges;
     ConfigOptionFloatOrPercent      extrusion_width;
