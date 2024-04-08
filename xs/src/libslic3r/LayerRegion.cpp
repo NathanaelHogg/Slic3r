@@ -5,7 +5,7 @@
 #include "PerimeterGenerator.hpp"
 #include "Print.hpp"
 #include "Surface.hpp"
-#include "printConfig.hpp"
+#include "PrintConfig.hpp"
 
 namespace Slic3r {
 
