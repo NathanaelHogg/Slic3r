@@ -484,8 +484,8 @@ LayerRegion::correct_z_on_path(ExtrusionPath *path)
                 
             double b = std::atan(dz/dx);
                 
-            double nozzle_offset_from_b0_z = four_axis_Z_offset*(1- std::cos(b))
-            double nozzle_offset_from_b0_x = four_axis_Z_offset* std::sin(b)
+            double nozzle_offset_from_b0_z = PrintObjectConfig::four_axis_Z_offset*(1- std::cos(b))
+            double nozzle_offset_from_b0_x = PrintObjectConfig::four_axis_Z_offset* std::sin(b)
             
             point.z = scale_(this->layer()->print_z) + nozzle_offset_from_b0_z;
             point.x = point.x + nozzle_offset_from_b0_z;
