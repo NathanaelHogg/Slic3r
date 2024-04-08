@@ -6,11 +6,12 @@
 
 namespace Slic3r {
 
-Point::Point(double x, double y, double z)
+Point::Point(double x, double y, double z, double b)
 {
     this->x = lrint(x);
     this->y = lrint(y);
     this->z = lrint(z);
+    this->b = lrint(b);
 }
 
 bool
@@ -23,7 +24,7 @@ std::string
 Point::wkt() const
 {
     std::ostringstream ss;
-    ss << "POINT(" << this->x << " " << this->y << " " << this->z << ")";
+    ss << "POINT(" << this->x << " " << this->y << " " << this->z << " " << this->b << ")";
     return ss.str();
 }
 
@@ -31,7 +32,7 @@ std::string
 Point::dump_perl() const
 {
     std::ostringstream ss;
-    ss << "[" << this->x << "," << this->y << "," << this->z << "]";
+    ss << "[" << this->x << "," << this->y << "," << this->z << "," << this->b << "]";
     return ss.str();
 }
 
@@ -51,7 +52,7 @@ Point::translate(double x, double y)
 }
 
 void
-Point::translate(double x, double y, double z)
+Point::translate(double x, double y, double z, double b)
 {
     this->translate(x,y);
     this->z += z;
